@@ -27,4 +27,9 @@
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
+    <actions>
+        <action id="tgAction" class="tgAction" text="tg Action" description="send the selection to tg">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl T"/>
+        </action>
+    </actions>
 </idea-plugin>
