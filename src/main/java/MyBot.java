@@ -7,22 +7,26 @@ import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class tgAction extends AnAction {
+public class MyBot extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
         @Nullable Editor editor = e.getData(PlatformDataKeys.EDITOR);
         String selectedText = editor.getSelectionModel().getSelectedText();
         if (selectedText != null) {
-            String encoded;
-            encoded = URLEncoder.encode(selectedText, StandardCharsets.UTF_8);
-            String url = String.format("https://t.me/katya_kozhina", encoded);
+            // Copy the selected text to the clipboard
+            StringSelection selection = new StringSelection(selectedText);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+
+            // Open the Telegram bot site in the browser
+            String url = "https://web.telegram.org/a/#6500502572";
             BrowserUtil.browse(url);
         } else {
-            Messages.showMessageDialog("Selection is empty, select code", "tg Action", Messages.getInformationIcon());
+            Messages.showMessageDialog("Selection is empty, select code", "OpenTgBot Action", Messages.getInformationIcon());
         }
-
     }
 }

@@ -11,6 +11,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+// https://mvnrepository.com/artifact/org.telegram/telegrambots
+    implementation("org.telegram:telegrambots:6.0.0")
+}
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
