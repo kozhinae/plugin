@@ -1,4 +1,4 @@
-# plugin
+# plugin tgAction
 by Kozhina Ekaterina group M3215  
 This plugin copies text from IDE and pastes it into my tg bot by steps:
 1. Get the currently active editor in IntelliJ IDEA
